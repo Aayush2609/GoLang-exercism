@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	// "strconv"
+)
+
 // Once there was an eccentric programmer living in a strange house with barred windows. One day he accepted a job from an online job board to build a party robot. The robot is supposed to greet people and help them to their seats. The first edition was very technical and showed the programmer's lack of human interaction. Some of which also made it into the next edition.
 
 // Task 1
@@ -42,3 +47,18 @@ package main
 // // You have been assigned to table 027. Your table is on the left, exactly 23.8 meters from here.
 // // You will be sitting next to Frank.
 
+func Welcome(name string) string {
+	return "Welcome to my party, " + name + "!" 
+}
+
+func HappyBirthday(name string, age int) string{
+	return fmt.Sprintf("Happy birthday %v!, You are %v years old!", name, age)
+}
+
+func AssignTable(name string, table int, neighbour, direction string, distance float64) string {
+	return fmt.Sprintf("Welcome to my party, %v!\nYou have been assigned to table %03d. Your table is %v, exactly %.1f meters from here.\nYou will be sitting next to %v.", name, table, direction, distance, neighbour)
+}
+
+func main(){
+	fmt.Println(AssignTable("aayush", 23, "kaish", "north", 34))
+}
